@@ -1,0 +1,16 @@
+terminal 1:
+javac -version   You need JDK 8.
+where.exe idlj
+where.exe tnameserv
+
+tnameserv -ORBInitialPort 900
+
+
+terminal 2:
+idlj -fall Hello.idl
+javac HelloApp\*.java HelloServer.java HelloClient.java
+java HelloServer -ORBInitialPort 900
+
+
+terminal 3:
+ java HelloClient -ORBInitialPort 900
